@@ -50,7 +50,7 @@ def plot_color(df):
     sns.barplot(x=color_distribute.index, y=color_distribute.values, palette='mako')   
     ax.set_xlabel('Warna Produk')
     ax.set_ylabel('Jumlah')
-    ax.set_xticklabels(rotation=90)
+    ax.tick_params(axis='x', rotation=90)
     ax.set_title('Distribusi Warna Produk')
     st.pyplot(fig)
     
