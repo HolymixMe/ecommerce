@@ -63,7 +63,7 @@ def shipping_type(df):
     shipping_type_distribute = df['Shipping Type'].value_counts()
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.barplot(x=shipping_type_distribute.index, y=shipping_type_distribute.values, palette='mako')   
-    ax.set_xlabel('Metode Pembayaran')
+    ax.set_xlabel('Metode Pengiriman')
     ax.set_ylabel('Jumlah')
     st.pyplot(fig)
 
