@@ -16,13 +16,13 @@ def load_data():
 # Visualisasi Pembeli
 def plot_gender_customer(df):
     gender_counts = df['Gender'].value_counts()
-    fig1, ax1 = plt.subplots(figsize=(8, 8))
+    fig, ax = plt.subplots(figsize=(8, 8))
     ax1.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=90, colors=['#ff9999', '#66b3ff'])
     ax1.set_title('Distribusi Gender Pelanggan')
     st.pyplot(fig)
 def plot_age_customer(df):
     age_counts = df['Age'].value_counts().sort_index()
-    fig2, ax2 = plt.subplots(figsize=(12, 6))
+    fig, ax = plt.subplots(figsize=(12, 6))
     sns.lineplot(x=age_counts.index, y=age_counts.values, ax=ax, marker='o', color='b')
     ax2.set_title('Distribusi Usia Pelanggan')
     ax2.set_xlabel('Usia')
