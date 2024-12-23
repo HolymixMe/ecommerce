@@ -10,7 +10,7 @@ import seaborn as sns
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv('https://raw.githubusercontent.com/HolymixMe/shopping_trends/main/shopping_trends.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/HolymixMe/shopping_trends/dashboard/shopping_trends.csv')
     return df
 
 # Visualisasi Pembeli
