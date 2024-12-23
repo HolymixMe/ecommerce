@@ -87,14 +87,14 @@ def main():
     filtered_df = df[df['Location'].isin(selected_location)]
     
     # Menampilkan visualisasi berdasarkan pilihan filter
-    if choice == 'Persebaran Pembeli':
+    if choice == 'Customer':
         plot_gender_customer(filtered_df)
         plot_age_customer(filtered_df)
-    elif choice == 'Waktu Pengiriman vs Review Score':
+    elif choice == 'Produk':
         plot_category(filtered_df)
         plot_color(filtered_df)
         plot_size(filtered_df)
-    elif choice == 'Angsuran Customer':
+    elif choice == 'Pembayaran':
         payment_method(filtered_df)
         shipping_type(filtered_df)
    
