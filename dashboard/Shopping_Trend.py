@@ -92,7 +92,7 @@ def main():
     if selected_location == 'All':
         filtered_df = df  # Tampilkan semua data
     else:
-        filtered_data = df[df['Location'] == selected_location]    
+        filtered_df = df[df['Location'] == selected_location]    
 
     
     # Menampilkan visualisasi berdasarkan pilihan filter
