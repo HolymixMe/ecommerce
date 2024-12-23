@@ -61,7 +61,7 @@ def payment_method(df):
     sns.barplot(x=payment_method_distribute.index, y=payment_method_distribute.values, palette='mako')   
     ax.set_xlabel('Metode Pembayaran')
     ax.set_ylabel('Jumlah')
-    ax.set_title('Distribusi Metode Pembayaran)
+    ax.set_title('Distribusi Metode Pembayaran')
     st.pyplot(fig)
 def shipping_type(df):
     shipping_type_distribute = df['Shipping Type'].value_counts()
