@@ -69,7 +69,7 @@ def shipping_type(df):
     sns.barplot(x=shipping_type_distribute.index, y=shipping_type_distribute.values, palette='mako')   
     ax.set_xlabel('Metode Pengiriman')
     ax.set_ylabel('Jumlah')
-    ax.set_title('Distribusi Metode Pengiriman)
+    ax.set_title('Distribusi Metode Pengiriman')
     st.pyplot(fig)
 
 # Main function
