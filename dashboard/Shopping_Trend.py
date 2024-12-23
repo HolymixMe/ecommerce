@@ -122,7 +122,7 @@ def main():
     
     # Filter for order status
     location_options = df['Location'].unique()
-    selected_location = st.sidebar.selectbox('Lokasi yang dipilih', location_options)
+    selected_location = st.sidebar.multiselect('Lokasi yang dipilih', location_options, default=location_options)
 
     # Filter the dataframe based on selected order status
     filtered_df = df[df['Location'].isin(selected_location)]
