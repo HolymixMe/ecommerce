@@ -84,28 +84,16 @@ def main():
     options = ['Customer', 'Produk', 'Pembayaran dan Pengiriman']
     choice = st.sidebar.selectbox("Pilih Visualisasi", options)
     
-    # Filter for order status
-    # Daftar lokasi unik
-    locations = df['Location'].unique().tolist()
+    # Menambahkan opsi "All" sebagai default
+    locations = ['All'] + df['Location'].unique().tolist()
+    selected_location = st.selectbox("Pilih Lokasi", locations, index=0)
 
-    # Checkbox untuk "Pilih Semua"
-    select_all = st.sidebar.checkbox("Pilih Semua", value=True)
+    # Filter data berdasarkan pilihan lokasi
+    if selected_location == 'All':
+        filtered_df = df  # Tampilkan semua data
+    else:
+        filtered_data = df[df['Location'] == selected_location]    
 
-    # Membuat checklist untuk tiap lokasi
-    selected_locations = []
-    st.sidebar.write("Pilih Lokasi:")
-    for location in locations:
-        if select_all:
-            # Jika "Pilih Semua" dipilih, semua checkbox otomatis aktif
-            st.sidebar.checkbox(location, value=True, key=location)
-            selected_locations.append(location)
-        else:
-            # Jika "Pilih Semua" tidak dipilih, user memilih lokasi satu per satu
-            if st.sidebar.checkbox(location, key=location):
-            selected_locations.append(location)
-
-    # Filter DataFrame berdasarkan lokasi yang dipilih
-    filtered_data = df[df['Location'].isin(selected_locations)]
     
     # Menampilkan visualisasi berdasarkan pilihan filter
     if choice == 'Customer':
